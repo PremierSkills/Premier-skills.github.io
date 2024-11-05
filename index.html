@@ -136,12 +136,17 @@
 
         // Collect form data
         const formData = new FormData(this);
-        const message = {
+        const message ={
+from_name:formData.get('name'),
+to_name: "Premier Skills",
+message: {
             name: formData.get('name'),
             email: formData.get('email'),
             course: formData.get('course'),
             phone: formData.get('phone')
-        };
+        },
+}
+            ;
 
         // Sending email
         emailjs.send('service_aqvf6me', 'template_b9uozjh', message)
