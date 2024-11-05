@@ -16,10 +16,19 @@
             background-color: #333;
             color: white;
             padding: 15px 0;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
         }
         header h1 {
             margin: 0;
+            font-size: 2rem;
         }
         .container {
             width: 80%;
@@ -65,11 +74,62 @@
             text-align: center;
             padding: 15px 0;
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .container {
+                width: 90%;
+            }
+            .course {
+                width: 45%;
+            }
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .courses {
+                flex-direction: column;
+                align-items: center;
+            }
+            .course {
+                width: 80%;
+            }
+            .form-container {
+                padding: 15px;
+            }
+            footer {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            .container {
+                width: 95%;
+            }
+            .course {
+                width: 90%;
+                margin: 15px 0;
+            }
+            .form-container input,
+            .form-container select,
+            .form-container button {
+                padding: 8px;
+                margin: 8px 0;
+            }
+            footer {
+                font-size: 12px;
+                padding: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
+    <img src="logo.jfif" alt="Premier Skills Logo" class="logo">
     <h1>Welcome to Premier Skills</h1>
     <p>Your gateway to professional skill development</p>
 </header>
@@ -77,19 +137,19 @@
 <div class="container">
     <section class="courses">
         <div class="course">
-            <img src="https://via.placeholder.com/600x400" alt="Course Image">
+            <img src="datascience.png" alt="Course Image">
             <h2>Data Science</h2>
             <p>Learn the basics of Data Science and become an expert in Python, R, and Machine Learning.</p>
         </div>
 
         <div class="course">
-            <img src="https://via.placeholder.com/600x400" alt="Course Image">
+            <img src="web-dev.png" alt="Course Image">
             <h2>Web Development</h2>
             <p>Master HTML, CSS, JavaScript, and build modern web applications with real-world projects.</p>
         </div>
 
         <div class="course">
-            <img src="https://via.placeholder.com/600x400" alt="Course Image">
+            <img src="digitalmarket.png" alt="Course Image">
             <h2>Digital Marketing</h2>
             <p>Learn SEO, SEM, Social Media Marketing, and much more to grow your business online.</p>
         </div>
@@ -136,17 +196,16 @@
 
         // Collect form data
         const formData = new FormData(this);
-        const message ={
-from_name:formData.get('name'),
-to_name: "Premier Skills",
-message: {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            course: formData.get('course'),
-            phone: formData.get('phone')
-        },
-}
-            ;
+        const message = {
+            from_name: formData.get('name'),
+            to_name: "Premier Skills",
+            message: {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                course: formData.get('course'),
+                phone: formData.get('phone')
+            },
+        };
 
         // Sending email
         emailjs.send('service_aqvf6me', 'template_b9uozjh', message)
