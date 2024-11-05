@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primear Skills</title>
+    <link rel="stylesheet" href="html.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Primear Skills</h1>
+            <p>Your path to professional excellence</p>
+        </div>
+    </header>
+
+    <section id="courses">
+        <div class="container">
+            <h2>Courses Offered</h2>
+            <ul>
+                <li>Web Development</li>
+                <li>Data Science</li>
+                <li>Digital Marketing</li>
+                <li>Graphic Designing</li>
+                <li>Machine Learning</li>
+                <li>Cyber Security</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="registration">
+        <div class="container">
+            <h2>Register for Courses</h2>
+            <form id="registrationForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Graphic Designing">Graphic Designing</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="Cyber Security">Cyber Security</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Primear Skills. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="html.js"></script>
+</body>
+</html>
