@@ -128,7 +128,23 @@
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 <script type="text/javascript">
     // Initialize EmailJS with only publicKey
-    emailjs.init('Bkxlnoh14tyqGoiKJ'); 
+   emailjs.init({
+            publicKey: 'Bkxlnoh14tyqGoiKJ',
+           // privateKey: 'EDrlZJw_iUzbWxe0pd8j7'
+  
+  // blockList: {
+    // Block the suspended emails
+    list: ['foo@emailjs.com', 'bar@emailjs.com'],
+    // The variable contains the email address
+    watchVariable: 'infopremierskill@gmail.com',
+  },
+  // limitRate: {
+    // Set the limit rate for the application
+    id: 'app',
+    // Allow 1 request per 10s
+    throttle: 10000,
+  },
+}); // Get your user ID from EmailJS
 
     document.getElementById('registration-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent form submission
