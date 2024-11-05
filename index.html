@@ -3,63 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Primear Skills</title>
-    <link rel="stylesheet" href="html.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="styles.css"> <!-- You can link your external CSS here -->
+    <style>
+        /* Basic CSS for layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .courses {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .course {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            width: 30%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Primear Skills</h1>
-            <p>Your path to professional excellence</p>
+
+<header>
+    <h1>Welcome to Premier Skills</h1>
+    <p>Your gateway to professional skill development</p>
+</header>
+
+<div class="container">
+    <section class="courses">
+        <div class="course">
+            <img src="https://via.placeholder.com/600x400" alt="Course Image">
+            <h2>Data Science</h2>
+            <p>Learn the basics of Data Science and become an expert in Python, R, and Machine Learning.</p>
         </div>
-    </header>
 
-    <section id="courses">
-        <div class="container">
-            <h2>Courses Offered</h2>
-            <ul>
-                <li>Web Development</li>
-                <li>Data Science</li>
-                <li>Digital Marketing</li>
-                <li>Graphic Designing</li>
-                <li>Machine Learning</li>
-                <li>Cyber Security</li>
-            </ul>
+        <div class="course">
+            <img src="https://via.placeholder.com/600x400" alt="Course Image">
+            <h2>Web Development</h2>
+            <p>Master HTML, CSS, JavaScript, and build modern web applications with real-world projects.</p>
         </div>
-    </section>
 
-    <section id="registration">
-        <div class="container">
-            <h2>Register for Courses</h2>
-            <form id="registrationForm">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="course">Select Course:</label>
-                <select id="course" name="course" required>
-                    <option value="Web Development">Web Development</option>
-                    <option value="Data Science">Data Science</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Graphic Designing">Graphic Designing</option>
-                    <option value="Machine Learning">Machine Learning</option>
-                    <option value="Cyber Security">Cyber Security</option>
-                </select>
-
-                <button type="submit">Submit</button>
-            </form>
+        <div class="course">
+            <img src="https://via.placeholder.com/600x400" alt="Course Image">
+            <h2>Digital Marketing</h2>
+            <p>Learn SEO, SEM, Social Media Marketing, and much more to grow your business online.</p>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Primear Skills. All rights reserved.</p>
-        </div>
-    </footer>
+    <section class="form-container">
+        <h2>Register for a Course</h2>
+        <form action="https//formsubmit.co/infopremierskill@gmail.com" method="POST" id="registration-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
 
-    <script src="html.js"></script>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="course">Select Course:</label>
+            <select id="course" name="course" required>
+                <option value="Data Science">Data Science</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+            </select>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <button type="submit">Register Now</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>Contact us at: <a href="mailto:infopremierskill@gmail.com" style="color: white;">infopremierskill@gmail.com</a></p>
+</footer>
+
 </body>
 </html>
