@@ -124,31 +124,17 @@
 </footer>
 
 <!-- EmailJS SDK -->
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-<script type="text/javascript">
-    // Initialize EmailJS with only publicKey
-   emailjs.init({
-            publicKey: 'Bkxlnoh14tyqGoiKJ',
-           // privateKey: 'EDrlZJw_iUzbWxe0pd8j7'
-  
-  // blockList: {
-    // Block the suspended emails
-    list: ['foo@emailjs.com', 'bar@emailjs.com'],
-    // The variable contains the email address
-    watchVariable: 'infopremierskill@gmail.com',
-  },
-  // limitRate: {
-    // Set the limit rate for the application
-    id: 'app',
-    // Allow 1 request per 10s
-    throttle: 10000,
-  },
-}); // Get your user ID from EmailJS
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    // Initialize EmailJS
+    emailjs.init('Bkxlnoh14tyqGoiKJ');
 
     document.getElementById('registration-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault(); // Prevent form from submitting normally
 
+        console.log("Form submitted"); // Debugging log
+
+        // Collect form data
         const formData = new FormData(this);
         const message = {
             name: formData.get('name'),
@@ -157,10 +143,14 @@
             phone: formData.get('phone')
         };
 
+        // Sending email
         emailjs.send('service_aqvf6me', 'template_b9uozjh', message)
             .then(function(response) {
+                console.log('EmailJS response:', response); // Debugging log
                 alert('Message Sent Successfully!');
-            }, function(error) {
+            })
+            .catch(function(error) {
+                console.error('EmailJS error:', error); // Debugging log
                 alert('Failed to send message, please try again.');
             });
     });
