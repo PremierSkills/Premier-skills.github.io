@@ -108,7 +108,7 @@
 
     <section class="form-container">
         <h2>Register for a Course</h2>
-        <form action="https://formsubmit.co/infopremierskill@gmail.com" method="POST" id="registration-form">
+        <form id="registration-form">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -133,6 +133,36 @@
 <footer>
     <p>Contact us at: <a href="mailto:infopremierskill@gmail.com" style="color: white;">infopremierskill@gmail.com</a></p>
 </footer>
+
+
+ <!-- EmailJS Script -->
+  <script type="text/javascript">
+    (function() {
+      emailjs.init('VcqCL5ut6MxhhNMXn'); // Get your user ID from EmailJS
+
+      document.getElementById('registration-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from refreshing the page
+
+        const formData = new FormData(this);
+        const message = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+course: formData.get('course'),
+          phone: formData.get('phone')
+        };
+
+        emailjs.send('service_aqvf6me', 'template_b9uozjh', message)
+          .then(function(response) {
+            alert('Message Sent Successfully!');
+          }, function(error) {
+            alert('Failed to send message, please try again.');
+          });
+      });
+    })();
+  </script>
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 </body>
 </html>
